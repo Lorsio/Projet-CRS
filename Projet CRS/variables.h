@@ -2,7 +2,6 @@
 #ifndef VARIABLES_H
 #define VARIABLES_H
 namespace Var {
-	static char niveau_select[] = "n1.txt";
 
 
 	//Initialisation de la fenêtre
@@ -57,7 +56,7 @@ namespace Var {
 	//Images du jeu - Sprites fond
 	static char image_E[25] = "images/sol/SPRFOND_E.png"; //Eau
 	static char image_M[25] = "images/sol/SPRFOND_M.png"; //Mur
-	static char image_P[25] = "images/sol/SPRFOND_P.png"; //Terre
+	static char image_T[25] = "images/sol/SPRFOND_T.png"; //Terre
 	static char image_F[25] = "images/sol/SPRFOND_F.png"; //Braise/Lave
 	static char image_S[25] = "images/sol/SPRFOND_S.png"; //Roche a escaladé
 	static char image_A[25] = "images/sol/SPRFOND_A.png"; //Bloc Arrivée

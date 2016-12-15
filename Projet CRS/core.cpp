@@ -38,7 +38,7 @@ int main(int argn, char* argv[]) {
 	SDL_FreeSurface(icone);
 
 
-	bool continuer = true, choix_niveau = true, continuer_niveau = false, continuer_jeu = false;
+	bool continuer = true, choix_niveau = false, continuer_niveau = false, continuer_jeu = false;
 	SDL_Event event;//gestion des évènements souris/clavier, 
 	while (continuer) {
 		//char image_accueil[24] = "images/fond/accueil.png";
@@ -75,15 +75,17 @@ int main(int argn, char* argv[]) {
 					continuer_niveau = false;
 				}
 				if (event.key.keysym.sym == SDLK_RETURN) { // a modif, pour test là;
-					cout << "test";
-					Niveau niveau;
-					niveau.generer(niveau_select);
-					niveau.afficher(rendu);
+					choix_niveau = true;
 					continuer_jeu = true;
 					continuer_niveau = false;
 				}
 				break;
 			}
+		}
+		if (choix_niveau) {
+			Niveau niveau;
+			niveau.generer("niveaux/n0");
+			niveau.afficher(rendu);
 		}
 
 			/*if (Générer == False){

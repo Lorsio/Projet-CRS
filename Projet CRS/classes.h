@@ -22,6 +22,7 @@ public:
 
 	void generer(char* choix_niveau);
 	void afficher(SDL_Renderer *rendu);
+	void affichecase(SDL_Renderer *rendu, SDL_Rect PosFond, char* image);
 };
 
 /*
