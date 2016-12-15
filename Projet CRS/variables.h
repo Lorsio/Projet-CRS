@@ -2,7 +2,7 @@
 #ifndef VARIABLES_H
 #define VARIABLES_H
 namespace Var {
-	static char niveau_select[] = "niveau/n1.txt";
+	static char niveau_select[] = "n1.txt";
 
 
 	//Initialisation de la fenêtre

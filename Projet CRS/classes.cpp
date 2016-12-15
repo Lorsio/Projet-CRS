@@ -16,11 +16,11 @@ void Niveau::generer(char* choix_niveau) {
 	if (!entree)
 		cout << "Problème d'ouverture" << endl;
 	else {
-		char tmp[3];
+		char tmp;
 		int i = 0;
-		while (!entree.eof()) {
-			entree.getline(tmp, 1);
-			ligne[i] = tmp[0];
+		while (!entree.eof() && i < 500) {
+			entree.get(tmp);
+			ligne[i] = tmp;
 			i++;
 		}
 		entree.close();
@@ -28,12 +28,7 @@ void Niveau::generer(char* choix_niveau) {
 }
 
 void Niveau::afficher(SDL_Renderer *rendu) {
-	int x = 0, y = 0;
-
 	SDL_Rect posFond;
-	//on crée une texture à partir de l'image, de sa couleur, et de la fonte
-
-
 	for (int num_ligne = 0; num_ligne < 20; num_ligne++) {
 		for (int num_case = 0; num_case < 20; num_case++) {
 			posFond.x = num_case * TAILLE_SPR_X;
