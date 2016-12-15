@@ -75,18 +75,17 @@ int main(int argn, char* argv[]) {
 					continuer_niveau = false;
 				}
 				if (event.key.keysym.sym == SDLK_RETURN) { // a modif, pour test là;
-					choix_niveau = true;
-
+					cout << "test";
+					Niveau niveau;
+					niveau.generer(niveau_select);
+					niveau.afficher(rendu);
 					continuer_jeu = true;
 					continuer_niveau = false;
 				}
 				break;
 			}
 		}
-		if (!choix_niveau) { // vérifie qu'un niveau est bien choisi
-			Niveau niveau;
-			niveau.generer(niveau_select);
-			niveau.afficher(rendu);
+
 			/*if (Générer == False){
 			// Création des persos...
 			}
@@ -95,7 +94,7 @@ int main(int argn, char* argv[]) {
 			}
 			Perso = Romain; //perso par défaut */
 
-		}
+
 		while (continuer_jeu) {
 			SDL_WaitEvent(&event);
 			switch (event.type) {

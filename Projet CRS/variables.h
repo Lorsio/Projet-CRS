@@ -2,51 +2,51 @@
 #ifndef VARIABLES_H
 #define VARIABLES_H
 namespace Var {
-	char niveau_select[] = "niveau/n1";
+	static char niveau_select[] = "niveau/n1.txt";
 
 
 	//Initialisation de la fenêtre
-	int FPS = 30;
-	char titre_fenetre[11] = "Projet CRS";
-	char image_icone[25] = "images/sprites/ICONE.bmp";
-	const int TAILLE_X = 600;
-	const int TAILLE_Y = 480;
+	static int FPS = 30;
+	static char titre_fenetre[11] = "Projet CRS";
+	static char image_icone[25] = "images/sprites/ICONE.bmp";
+	static const int TAILLE_X = 600;
+	static const int TAILLE_Y = 480;
 
 	//Tailles des sprites du fond
-	int TAILLE_SPR_X = 30;
-	int TAILLE_SPR_Y = 24;
-	int NBR_SPR_COTE = 20;
+	static int TAILLE_SPR_X = 30;
+	static int TAILLE_SPR_Y = 24;
+	static int NBR_SPR_COTE = 20;
 
 	//Emplacement de départ du sprite du personnage
-	int X_Player = 30;
-	int Y_Player = 0;
-	int CASE_X = 1;
-	int CASE_Y = 1;
+	static int X_Player = 30;
+	static int Y_Player = 0;
+	static int CASE_X = 1;
+	static int CASE_Y = 1;
 
 	//Variable du score
-	int SCORE = 0;
-	int PAS = 0;
+	static int SCORE = 0;
+	static int PAS = 0;
 
 	//Divers : Réglage de bug Python & Fonctionnalité annexes
-	int entre_niveau = 0; //Variable permettant de ne pas revenir à l'accueil une fois un niveau lancer
-	int niveau = 0; //Variable gérant le niveau
-	bool Generer = false; //Variable qui sert pour la gestion de la remise à 0 des personnages
-	bool tuto = false; //Variable pour le tuto
-	bool repet_tuto = false; //Variable pour empêcher le blocage dans la boucle tuto
-	int Cec_obs = 1; //Variable pour gérer l'enchainement des bras du sprite de Cécile en obstacle
+	static int entre_niveau = 0; //Variable permettant de ne pas revenir à l'accueil une fois un niveau lancer
+	static int niveau = 0; //Variable gérant le niveau
+	static bool Generer = false; //Variable qui sert pour la gestion de la remise à 0 des personnages
+	static bool tuto = false; //Variable pour le tuto
+	static bool repet_tuto = false; //Variable pour empêcher le blocage dans la boucle tuto
+	static int Cec_obs = 1; //Variable pour gérer l'enchainement des bras du sprite de Cécile en obstacle
 
 	 //Images du jeu - Fenêtre
-	char image_accueil[24] = "images/fond/accueil.png";
-	char image_niveau[28] = "images/fond/fond_niveau.png";
-	char image_pause[22] = "images/fond/pause.png";
+	static char image_accueil[24] = "images/fond/accueil.png";
+	static char image_niveau[28] = "images/fond/fond_niveau.png";
+	static char image_pause[22] = "images/fond/pause.png";
 	//Images du jeu - Tutoriels
-	char tuto1[22] = "images/fond/tuto1.png";
+	static char tuto1[22] = "images/fond/tuto1.png";
 	//Images du jeu - Sprites personnages
 	//Sprites Romain(Normaux)
-	char image_SRL[31] = "images/sprites/SPRROM_LEFT.png";
-	char image_SRR[32] = "images/sprites/SPRROM_RIGHT.png";
-	char image_SRF[32] = "images/sprites/SPRROM_FRONT.png";
-	char image_SRB[31] = "images/sprites/SPRROM_BACK.png";
+	static char image_SRL[31] = "images/sprites/SPRROM_LEFT.png";
+	static char image_SRR[32] = "images/sprites/SPRROM_RIGHT.png";
+	static char image_SRF[32] = "images/sprites/SPRROM_FRONT.png";
+	static char image_SRB[31] = "images/sprites/SPRROM_BACK.png";
 	//Sprites Romain(Obstacle)
 	//Sprites Cécile(Normaux)
 	//Sprites Cécile(Obstacle)
@@ -55,13 +55,13 @@ namespace Var {
 
 
 	//Images du jeu - Sprites fond
-	char image_E[25] = "images/sol/SPRFOND_E.png"; //Eau
-	char image_M[25] = "images/sol/SPRFOND_M.png"; //Mur
-	char image_P[25] = "images/sol/SPRFOND_P.png"; //Terre
-	char image_F[25] = "images/sol/SPRFOND_F.png"; //Braise/Lave
-	char image_S[25] = "images/sol/SPRFOND_S.png"; //Roche a escaladé
-	char image_A[25] = "images/sol/SPRFOND_A.png"; //Bloc Arrivée
-	char image_Q[25] = "images/sol/SPRFOND_Q.png"; //Bloc tutoriel
+	static char image_E[25] = "images/sol/SPRFOND_E.png"; //Eau
+	static char image_M[25] = "images/sol/SPRFOND_M.png"; //Mur
+	static char image_P[25] = "images/sol/SPRFOND_P.png"; //Terre
+	static char image_F[25] = "images/sol/SPRFOND_F.png"; //Braise/Lave
+	static char image_S[25] = "images/sol/SPRFOND_S.png"; //Roche a escaladé
+	static char image_A[25] = "images/sol/SPRFOND_A.png"; //Bloc Arrivée
+	static char image_Q[25] = "images/sol/SPRFOND_Q.png"; //Bloc tutoriel
 
 	/*
 	#Sprites Romain en obstacle
