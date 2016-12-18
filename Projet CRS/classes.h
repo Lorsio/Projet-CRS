@@ -15,7 +15,7 @@ using namespace Var;
 class Niveau
 {
 private:
-	char ligne[500];
+	char ligne[21][21];
 public:
 	Niveau();
 	~Niveau();
@@ -25,11 +25,20 @@ public:
 	void affichecase(SDL_Renderer *rendu, SDL_Rect PosFond, char* image);
 };
 
-/*
+
 class Joueur {
+private:
+	int case_x, case_y, x, y;
+
+public: 
+	Joueur();
+	~Joueur();
+
+	void deplacer(char* direction);
+
 
 };
-*/
+
 
 #endif
 

@@ -84,8 +84,9 @@ int main(int argn, char* argv[]) {
 		}
 		if (choix_niveau) {
 			Niveau niveau;
-			niveau.generer("niveaux/n0");
+			niveau.generer("niveaux/n3");
 			niveau.afficher(rendu);
+			SDL_RenderPresent(rendu);
 		}
 
 			/*if (Générer == False){
