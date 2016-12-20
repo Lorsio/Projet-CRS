@@ -9,13 +9,28 @@
 #include "config_sdl.h"
 using namespace std;
 
+struct image_Joueur {
+	char* mini;
+	char* right;
+	char* left;
+	char* up;
+	char* down;
+	char* obsright;
+	char* obsleft;
+	char* obsup;
+	char* obsdown;
+};
+typedef struct image_Joueur image_Joueur;
+image_Joueur Romain = {image_mini, image_SRR, image_SRL, image_SRB, image_SRF, image_SRR, image_SRL, image_SRB, image_SRF};
+image_Joueur* joueur_actuel = &Romain;
 
 //Fonction ; Re-définir les variables en fonction des classes
 /* void Reset(Personnage);
 void Reset_Pas(Pas);
 void Mouvement(Personnage, MVT); */
 void afficheFond(char lien[], SDL_Renderer *rendu);
-
+Niveau niveau_fond;
+Joueur joueur;
 
 //PARTIE INITIALISATION : Fenêtre, icone, nom, répétition
 
@@ -83,29 +98,51 @@ int main(int argn, char* argv[]) {
 			}
 		}
 		if (choix_niveau) {
-			Niveau niveau;
-			niveau.generer("niveaux/n3");
-			niveau.afficher(rendu);
+			niveau_fond.generer("niveaux/n3");
+			niveau_fond.afficher(rendu);
+			SDL_Rect posFond;
+			posFond.x = 30;
+			posFond.y = 24;
+			joueur.affichecase(rendu, posFond, *joueur_actuel.right);
+
 			SDL_RenderPresent(rendu);
 		}
 
-			/*if (Générer == False){
-			// Création des persos...
-			}
-			else {
-			// Reset des persos...
-			}
-			Perso = Romain; //perso par défaut */
-
 
 		while (continuer_jeu) {
-			SDL_WaitEvent(&event);
+			SDL_PollEvent(&event);
 			switch (event.type) {
 			case SDL_QUIT:
 				continuer_jeu = false;
 				continuer = false;
 				break;
+			case SDL_KEYDOWN:
+				if (event.key.keysym.sym == SDLK_RIGHT) {
+					niveau_fond.afficher(rendu);
+					joueur.deplacer("right", rendu, niveau_fond.ligne);
+					SDL_RenderPresent(rendu);
+				}
+				if (event.key.keysym.sym == SDLK_DOWN) {
+					niveau_fond.afficher(rendu);
+					joueur.deplacer("down", rendu, niveau_fond.ligne);
+					SDL_RenderPresent(rendu);
+				}
+				if (event.key.keysym.sym == SDLK_UP) {
+					niveau_fond.afficher(rendu);
+					joueur.deplacer("up", rendu, niveau_fond.ligne);
+					SDL_RenderPresent(rendu);
+				}
+				if (event.key.keysym.sym == SDLK_LEFT) {
+					niveau_fond.afficher(rendu);
+					joueur.deplacer("left", rendu, niveau_fond.ligne);
+					SDL_RenderPresent(rendu);
+				}
+				if (event.key.keysym.sym == SDLK_a);
+				if (event.key.keysym.sym == SDLK_z);
+				if (event.key.keysym.sym == SDLK_e);
+
 			}
+
 		}
 	}
 	SDL_Quit();

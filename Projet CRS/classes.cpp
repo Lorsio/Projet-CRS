@@ -1,7 +1,5 @@
 #include "classes.h"
 
-
-
 Niveau::Niveau()
 {
 }
@@ -17,7 +15,7 @@ void Niveau::generer(char* choix_niveau) {
 		cout << "Problème d'ouverture" << endl;
 	else {
 		char tmp;
-		int i = 0, j=0;
+		int i = 0, j = 0;
 		while (!entree.eof()) {
 			if (i == 20) {
 				i = 0;
@@ -77,6 +75,44 @@ Joueur::~Joueur() {
 
 }
 
-void Joueur::deplacer(char* direction) {
+void Joueur::deplacer(char* direction, SDL_Renderer *rendu, char ligne[][21]) {
+	if (strcmp(direction, "right") == 0 && ligne[case_y+1][case_x+1] != 'm') {
+		if (case_x < (NBR_SPR_COTE - 1)) {
+			case_x++;
+			Joueur::affichecase(rendu, posFond, image_SRR);
+		}
+	}
+	if (strcmp(direction, "left") == 0 && ligne[case_y+1][case_x - 1] != 'm') {
+		if (case_x > 0) {
+			case_x--;
+			Joueur::affichecase(rendu, posFond, image_SRL);
+		}
+	}
+	if (strcmp(direction, "up") == 0 && ligne[case_y][case_x] != 'm') {
+		if (case_y > 0) {
+			case_y--;
+			Joueur::affichecase(rendu, posFond, image_SRB);
+		}
+	}
+	if (strcmp(direction, "down") == 0 && ligne[case_y+2][case_x] != 'm') {
+		if (case_y < (NBR_SPR_COTE - 1)) {
+			case_y++;
+			Joueur::affichecase(rendu, posFond, image_SRF);
+		}
+	}
+	// test de fin de jeu
+	if (ligne[case_y +1][case_x] != 'a') {
+		//return?
+		}
+	
+}
 
+void Joueur::affichecase(SDL_Renderer *rendu, SDL_Rect posFond, char* image) {
+	posFond.x = case_x * TAILLE_SPR_X;
+	posFond.y = case_y * TAILLE_SPR_Y;
+	SDL_Texture *textureFond = loadImage(rendu, image);
+	SDL_QueryTexture(textureFond, NULL, NULL, &posFond.w, &posFond.h);
+	SDL_RenderCopy(rendu, textureFond, NULL, &posFond); //on copie la texture dans le rendu
+	SDL_RenderPresent(rendu);
+	SDL_DestroyTexture(textureFond);
 }

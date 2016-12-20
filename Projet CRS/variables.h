@@ -36,7 +36,7 @@ namespace Var {
 
 	 //Images du jeu - Fenêtre
 	static char image_accueil[24] = "images/fond/accueil.png";
-	static char image_niveau[28] = "images/fond/fond_niveau.png";
+	static char image_niveau[29] = "images/fond/fond_niveau2.png";
 	static char image_pause[22] = "images/fond/pause.png";
 	//Images du jeu - Tutoriels
 	static char tuto1[22] = "images/fond/tuto1.png";
@@ -46,6 +46,7 @@ namespace Var {
 	static char image_SRR[32] = "images/sprites/SPRROM_RIGHT.png";
 	static char image_SRF[32] = "images/sprites/SPRROM_FRONT.png";
 	static char image_SRB[31] = "images/sprites/SPRROM_BACK.png";
+	static char image_mini[31] = "images/sprites_mini/SPRMINI_Y";
 	//Sprites Romain(Obstacle)
 	//Sprites Cécile(Normaux)
 	//Sprites Cécile(Obstacle)

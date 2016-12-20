@@ -15,11 +15,11 @@ using namespace Var;
 class Niveau
 {
 private:
-	char ligne[21][21];
+
 public:
 	Niveau();
 	~Niveau();
-
+	char ligne[21][21];
 	void generer(char* choix_niveau);
 	void afficher(SDL_Renderer *rendu);
 	void affichecase(SDL_Renderer *rendu, SDL_Rect PosFond, char* image);
@@ -28,13 +28,16 @@ public:
 
 class Joueur {
 private:
-	int case_x, case_y, x, y;
+	int case_x = 1, case_y = 0;
+
+	SDL_Rect posFond;
 
 public: 
 	Joueur();
 	~Joueur();
 
-	void deplacer(char* direction);
+	void deplacer(char* direction, SDL_Renderer *rendu, char ligne[][21]);
+	void affichecase(SDL_Renderer *rendu, SDL_Rect posFond, char* image);
 
 
 };
